@@ -108,8 +108,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj": {
-              "projectPath": "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj"
+            "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj": {
+              "projectPath": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj"
             }
           }
         }
