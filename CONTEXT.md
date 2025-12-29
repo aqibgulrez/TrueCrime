@@ -10,6 +10,18 @@ Tech stack & infra
 - Frontend: React (served from S3/CloudFront)
 - Frontend: React (served from S3/CloudFront)
 - API Gateway: frontend will call backend APIs through AWS API Gateway (edge-optimized or regional as appropriate)
+
+API Gateway security
+- The API Gateway will enforce enterprise-level security controls:
+	- Authentication & Authorization: use AWS Cognito JWT authorizers (or Lambda authorizers) to enforce user and admin roles.
+	- Transport security: custom domain with TLS, enforce HTTPS, support mutual TLS for service-to-service where required.
+	- Threat protection: AWS WAF for OWASP rules, IP reputation, and geo-blocking; AWS Shield for DDoS protection.
+	- Rate limiting & throttling: per-user and per-api throttles to prevent abuse; integrate with usage plans and API keys if needed.
+	- Request validation & size limits: validate request schemas, body size, and reject malformed or oversized requests.
+	- Logging & tracing: enable full request/response logging, integrate with CloudWatch and OpenTelemetry tracing for observability.
+	- Webhook & replay protection: validate signatures on webhook endpoints and use idempotency keys for critical operations.
+	- Least-privilege IAM: restrict API Gateway integrations via execution roles and limit access to backend resources.
+
 - Auth: AWS Cognito
 - Compute: ECS Fargate
 - Database: PostgreSQL (RDS) — single database shared across apps for cost reasons
