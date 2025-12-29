@@ -42,4 +42,20 @@ Next immediate steps I can take for you
 - Add a `tests/` project and a sample unit test.
 - Continue creating infra IaC skeleton (Terraform modules) for Cognito, ECS, RDS, S3.
 
+Product & business rules
+- The chatbot is a paid service: users pay a monthly subscription to access the chatbot page.
+- The chatbot will call the OpenAI API to generate stories and responses; the app will provide both pre-generated stories and allow users to generate their own.
+- For cost and privacy, store only the user's most-recently-generated story for now; design the DB schema to be flexible to store multiple stories later.
+- Payments will be handled through Stripe; integrate webhook handling for subscription lifecycle (create/cancel/payment failures) and reconcile with user records.
+- Admin panel: provide an admin interface where admin users can view users, subscription status, payments, and basic usage metrics.
+
+Data model notes
+- Store minimal user-generated content initially: `Users` table, `LatestUserStory` column or `UserStories` table with a flag for `IsLatest`.
+- Keep schema extensible (timestamps, story metadata, token costs, content moderation flags).
+
+Security & compliance notes
+- Ensure payment and PII data are handled securely; do not store raw payment card data (use Stripe tokens).
+- Implement rate-limiting, content moderation (OpenAI safety), and logging of critical events for audits.
+
+
 File created by automated assistant.
