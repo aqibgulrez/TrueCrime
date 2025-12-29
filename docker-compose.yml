@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  userservice:
+    build:
+      context: ./backend/services/UserService/UserService.API
+      dockerfile: Dockerfile
+    environment:
+      - DATABASE_URL=Host=postgres;Port=5432;Database=truecrime;Username=postgres;Password=postgres
+    depends_on:
+      - postgres
+    ports:
+      - "5000:80"
