@@ -1,0 +1,27 @@
+# Visual Studio / .NET
+bin/
+obj/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.userosscache
+*.sln.ide
+.vs/
+
+# Rider
+.idea/
+
+# Node / frontend
+node_modules/
+build/
+dist/
+
+# Logs, secrets, local env
+.env
+*.local
+secrets.json
+
+# OS files
+Thumbs.db
+.DS_Store
