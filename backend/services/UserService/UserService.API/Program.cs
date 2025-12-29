@@ -1,8 +1,26 @@
+using Microsoft.EntityFrameworkCore;
+using UserService.Infrastructure.Persistence;
+using UserService.Application.Interfaces.Persistence;
+using UserService.Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Add controllers
+builder.Services.AddControllers();
+
+// Configure DbContext (read connection from Configuration or env)
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? builder.Configuration["DATABASE_URL"];
+if (!string.IsNullOrEmpty(connectionString))
+{
+    builder.Services.AddDbContext<UserDbContext>(options => options.UseNpgsql(connectionString));
+}
+
+// Register repositories
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
@@ -13,6 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.MapControllers();
 
 var summaries = new[]
 {
