@@ -1,5 +1,12 @@
 <Project>
   <PropertyGroup>
+    <!-- Global build settings -->
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <ImplicitUsings>enable</ImplicitUsings>
+
     <!-- Centralized package versions -->
     <EFCoreVersion>8.0.0</EFCoreVersion>
     <EFCoreDesignVersion>8.0.0</EFCoreDesignVersion>
@@ -10,9 +17,5 @@
     <XUnitRunnerVersion>2.6.0</XUnitRunnerVersion>
     <EFCoreInMemoryVersion>8.0.0</EFCoreInMemoryVersion>
     <MoqVersion>4.20.0</MoqVersion>
-
-    <!-- Common project settings -->
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 </Project>

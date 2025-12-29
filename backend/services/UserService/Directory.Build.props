@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <!-- UserService-specific settings -->
+    <ServiceName>UserService</ServiceName>
+    <DockerImageName>truecrime/userservice</DockerImageName>
+  </PropertyGroup>
+</Project>

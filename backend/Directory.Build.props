@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <!-- Backend-specific build settings -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarningLevel>5</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+</Project>
