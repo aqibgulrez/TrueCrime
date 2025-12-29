@@ -58,6 +58,8 @@ Next immediate steps I can take for you
 
 Product & business rules
 - The chatbot is a paid service: users pay a monthly subscription to access the chatbot page.
+ - The chatbot is a paid service: users pay for a subscription to access the chatbot page.
+ - Support recurring weekly and monthly plans; plan definitions (cadence, price, Stripe price ID) are stored in a settings table so offerings can be changed without code deployments.
 - The chatbot will call the OpenAI API to generate stories and responses; the app will provide both pre-generated stories and allow users to generate their own.
 - For cost and privacy, store only the user's most-recently-generated story for now; design the DB schema to be flexible to store multiple stories later.
 - Payments will be handled through Stripe; integrate webhook handling for subscription lifecycle (create/cancel/payment failures) and reconcile with user records.
@@ -66,6 +68,8 @@ Product & business rules
 Data model notes
 - Store minimal user-generated content initially: `Users` table, `LatestUserStory` column or `UserStories` table with a flag for `IsLatest`.
 - Keep schema extensible (timestamps, story metadata, token costs, content moderation flags).
+ - Add a `BillingPlans` (or `Settings`) table to model available plans and pricing: fields like `PlanId`, `Name`, `Cadence` (weekly|monthly), `StripePriceId`, `Price`, `Currency`, `TrialDays`, `IsActive`.
+ - PaymentService maps users to `BillingPlans` and stores subscription metadata (Stripe customer ID, Stripe subscription ID, current status, period_end).
 
 Security & compliance notes
 - Ensure payment and PII data are handled securely; do not store raw payment card data (use Stripe tokens).
