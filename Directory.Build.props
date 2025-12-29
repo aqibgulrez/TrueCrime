@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <!-- Centralized package versions -->
+    <EFCoreVersion>8.0.0</EFCoreVersion>
+    <EFCoreDesignVersion>8.0.0</EFCoreDesignVersion>
+    <NpgsqlVersion>8.0.0</NpgsqlVersion>
+    <OpenApiVersion>10.0.1</OpenApiVersion>
+
+    <!-- Common project settings -->
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+</Project>
