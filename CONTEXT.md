@@ -44,6 +44,12 @@ Operational notes
 - Use a single PostgreSQL RDS instance with database schema and role separation as necessary
 - Design services to be stateless where possible; keep session/state in durable stores
 
+Build & config notes
+- Use MSBuild `.props` files to centralize package/version references and shared build settings so updating references is easy across projects.
+- PostgreSQL local data files: configure a host folder (for example `./pgdata`) mounted into the Postgres Docker container so DB files live outside the repository and can be managed per-developer.
+	- Do NOT commit Postgres `pgdata` directories or binary data files into git.
+	- To bootstrap local environments, include SQL migration scripts or a sanitized SQL dump in the repo that developers can import. If a binary snapshot is needed, keep it outside the repo and share via secure storage; avoid committing it to git.
+
 Repository notes (from quick scan)
 - Project already uses solution with `UserService` split into API, Application, Domain, Infrastructure projects — aligns with clean architecture.
 - Several build artifacts (`bin/`, `obj/`) are present in the repo history — add/update `.gitignore` and remove committed artifacts.
