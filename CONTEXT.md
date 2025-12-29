@@ -57,5 +57,19 @@ Security & compliance notes
 - Ensure payment and PII data are handled securely; do not store raw payment card data (use Stripe tokens).
 - Implement rate-limiting, content moderation (OpenAI safety), and logging of critical events for audits.
 
+Usage-control & billing policy
+- Enforce per-user usage controls to prevent abuse: apply per-user story limits and token limits (e.g., stories/day, tokens/month).
+- Store limit settings in a config table (admin-updatable) or environment-backed feature flags so limits can be tuned without a deployment.
+- Enforcement: `StoryService` should validate limits before calling OpenAI; track usage counters in DB (or a fast cache with periodic persistence) and reject requests that exceed limits.
+- Billing enforcement: if a user's subscription is expired or in a delinquent state, block story-generation endpoints and redirect the frontend to the payment/checkout flow.
+- Recurring billing: subscriptions are monthly and managed through Stripe Subscriptions; handle webhook events (`invoice.paid`, `invoice.payment_failed`, `customer.subscription.deleted`) to update application state.
+- Admin override: admin users should be able to temporarily whitelist or adjust limits for specific users via the `AdminService` UI/API.
+- Monitoring & alerts: generate alerts for unusual spikes in token usage to detect compromised accounts or abuse.
+
+Operational enforcement details
+- Use a short-lived cache (Redis or in-memory with distributed coordination) to keep per-user counters for performance; persist authoritative counters to Postgres regularly.
+- For critical enforcement (blocking on expired payment), read authoritative subscription state from `PaymentService` backed store (cached for performance with short TTL).
+- Ensure webhooks are idempotent and securely verified (use `STRIPE_WEBHOOK_SECRET`) so subscription state remains consistent.
+
 
 File created by automated assistant.
