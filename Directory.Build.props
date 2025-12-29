@@ -5,6 +5,11 @@
     <EFCoreDesignVersion>8.0.0</EFCoreDesignVersion>
     <NpgsqlVersion>8.0.0</NpgsqlVersion>
     <OpenApiVersion>10.0.1</OpenApiVersion>
+    <TestSdkVersion>17.10.0</TestSdkVersion>
+    <XUnitVersion>2.6.0</XUnitVersion>
+    <XUnitRunnerVersion>2.6.0</XUnitRunnerVersion>
+    <EFCoreInMemoryVersion>8.0.0</EFCoreInMemoryVersion>
+    <MoqVersion>4.20.0</MoqVersion>
 
     <!-- Common project settings -->
     <Nullable>enable</Nullable>
