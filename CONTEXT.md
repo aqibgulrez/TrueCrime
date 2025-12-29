@@ -81,6 +81,26 @@ Security & compliance notes
 - Ensure payment and PII data are handled securely; do not store raw payment card data (use Stripe tokens).
 - Implement rate-limiting, content moderation (OpenAI safety), and logging of critical events for audits.
 
+Secrets & configuration
+- All secrets and connection strings must be provided via environment variables in runtime.
+- Development: services may load values from `appsettings.Development.json` for convenience, but developers should prefer environment variables or a local `.env` file and never commit secrets to git.
+- Production: do NOT use file-based secrets. Production services must read secrets (DB connection strings, API keys, Stripe secrets, OpenAI keys, etc.) from AWS Secrets Manager or SSM Parameter Store using IAM roles assigned to ECS tasks.
+- ECS tasks should use IAM task roles with least privilege to retrieve secrets; avoid embedding long-lived credentials in images or code.
+- Rotate secrets regularly and ensure that secret values are never logged or exposed in error messages.
+
+Validation & testing (enterprise level)
+- Apply rigorous validation at every layer:
+	- API layer: request schema validation (OpenAPI), input sanitization, size limits, and authentication/authorization checks.
+	- Application/service layer: enforce business rules, rate limits, and token accounting before external API calls.
+	- Domain layer: enforce invariants and strong typing/value objects for critical data (emails, roles, IDs).
+- Testing requirements:
+	- Unit tests for domain logic and validation rules.
+	- Integration tests for service interactions (DB, external APIs, message queues).
+	- End-to-end tests covering common user flows (signup, subscription, generate story, payment failure handling).
+	- Contract tests to ensure frontend-backend and service-service contracts remain stable.
+	- Security and fuzz testing for input validation, plus dependency vulnerability scanning.
+- All layers should have automated validation and tests run in CI; failures must block merges.
+
 Usage-control & billing policy
 - Enforce per-user usage controls to prevent abuse: apply per-user story limits and token limits (e.g., stories/day, tokens/month).
 - Store limit settings in a config table (admin-updatable) or environment-backed feature flags so limits can be tuned without a deployment.
