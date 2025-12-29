@@ -8,6 +8,8 @@ Goal
 Tech stack & infra
 - Backend: .NET Web API (C#)
 - Frontend: React (served from S3/CloudFront)
+- Frontend: React (served from S3/CloudFront)
+- API Gateway: frontend will call backend APIs through AWS API Gateway (edge-optimized or regional as appropriate)
 - Auth: AWS Cognito
 - Compute: ECS Fargate
 - Database: PostgreSQL (RDS) — single database shared across apps for cost reasons
