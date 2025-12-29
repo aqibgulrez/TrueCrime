@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj": {}
+    "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj": {
+    "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj",
+        "projectUniqueName": "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj",
         "projectName": "UserService.Domain",
-        "projectPath": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj",
+        "projectPath": "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\UserService.Domain.csproj",
         "packagesPath": "C:\\Users\\aqibs\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\obj\\",
+        "outputPath": "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

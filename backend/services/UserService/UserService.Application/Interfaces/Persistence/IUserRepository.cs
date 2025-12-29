@@ -1,10 +1,10 @@
-using UserService.Domain.Entities;
+using UserService.Application.DTOs;
 
 namespace UserService.Application.Interfaces.Persistence;
 
 public interface IUserRepository
 {
-    Task<User> GetByIdAsync(Guid id);
-    Task AddAsync(User user);
-    Task<IEnumerable<User>> GetAllAsync();
+    Task<UserDto?> GetByIdAsync(Guid id);
+    Task<Guid> AddAsync(UserDto user);
+    Task<IEnumerable<UserDto>> GetAllAsync();
 }

@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+  </PropertyGroup>
+
+  <Target Name="EnforceBuildPolicies" BeforeTargets="CoreCompile">
+    <Message Text="Enforcing build policies: TreatWarningsAsErrors=$(TreatWarningsAsErrors); RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild)" Importance="High" />
+    <!-- Fail build early if any analyzers produce warnings (TreatWarningsAsErrors controls this) -->
+  </Target>
+
+  <Target Name="AddDefaultAssemblyInfo" BeforeTargets="CoreCompile">
+    <PropertyGroup>
+      <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+      <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
+      <FileVersion>$(VersionPrefix)</FileVersion>
+      <InformationalVersion>$(VersionPrefix)</InformationalVersion>
+    </PropertyGroup>
+  </Target>
+</Project>

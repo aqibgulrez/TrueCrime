@@ -1,26 +1,21 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using UserService.Domain.Entities;
-using UserService.Domain.ValueObjects;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using UserService.Infrastructure.Entities;
 
 namespace UserService.Infrastructure.Persistence.Configurations;
 
-public class UserConfiguration : IEntityTypeConfiguration<User>
+public class UserConfiguration : IEntityTypeConfiguration<UserEntity>
 {
-	public void Configure(EntityTypeBuilder<User> builder)
+	public void Configure(EntityTypeBuilder<UserEntity> builder)
 	{
 		builder.ToTable("Users");
 		builder.HasKey(u => u.Id);
 
 		builder.Property(u => u.FullName).HasMaxLength(200);
-		builder.Property(u => u.Role).HasConversion<string>().HasMaxLength(50);
+		builder.Property(u => u.Role).HasMaxLength(50);
 		builder.Property(u => u.IsActive).IsRequired();
 		builder.Property(u => u.CreatedAt).IsRequired();
 		builder.Property(u => u.UpdatedAt);
-
-		// map Email value object
-		builder.Property(typeof(Email), "Email").HasConversion(
-			v => ((Email)v).ToString(),
-			v => new Email(v));
 	}
 }

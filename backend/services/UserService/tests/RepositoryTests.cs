@@ -18,11 +18,11 @@ public class RepositoryTests
         await using (var context = new UserDbContext(options))
         {
             var repo = new UserRepository(context);
-            var user = new UserService.Domain.Entities.User("Test User", new Email("test@example.com"));
-            await repo.AddAsync(user);
-            var fetched = await repo.GetByIdAsync(user.Id);
+            var dto = new UserService.Application.DTOs.UserDto(Guid.Empty, "Test User", "test@example.com");
+            var id = await repo.AddAsync(dto);
+            var fetched = await repo.GetByIdAsync(id);
             Assert.NotNull(fetched);
-            Assert.Equal("test@example.com", fetched.Email.Value);
+            Assert.Equal("test@example.com", fetched.Email);
         }
     }
 }

@@ -8,14 +8,24 @@
     <ImplicitUsings>enable</ImplicitUsings>
 
     <!-- Centralized package versions -->
-    <EFCoreVersion>8.0.0</EFCoreVersion>
-    <EFCoreDesignVersion>8.0.0</EFCoreDesignVersion>
-    <NpgsqlVersion>8.0.0</NpgsqlVersion>
+    <EFCoreVersion>10.0.0</EFCoreVersion>
+    <EFCoreDesignVersion>10.0.0</EFCoreDesignVersion>
+    <NpgsqlVersion>10.0.0</NpgsqlVersion>
     <OpenApiVersion>10.0.1</OpenApiVersion>
+    <JwtBearerVersion>10.0.0</JwtBearerVersion>
+    <MicrosoftIdentityModelJsonWebTokensVersion>10.0.0</MicrosoftIdentityModelJsonWebTokensVersion>
+    <SystemIdentityModelTokensJwtVersion>10.0.0</SystemIdentityModelTokensJwtVersion>
+    <MicrosoftExtensionsCachingMemoryVersion>10.0.0</MicrosoftExtensionsCachingMemoryVersion>
     <TestSdkVersion>17.10.0</TestSdkVersion>
     <XUnitVersion>2.6.0</XUnitVersion>
     <XUnitRunnerVersion>2.6.0</XUnitRunnerVersion>
-    <EFCoreInMemoryVersion>8.0.0</EFCoreInMemoryVersion>
+    <EFCoreInMemoryVersion>10.0.0</EFCoreInMemoryVersion>
     <MoqVersion>4.20.0</MoqVersion>
+    <Company>MyCompany</Company>
+    <Authors>Dev Team</Authors>
+    <RepositoryUrl>https://github.com/aqibgulrez/TrueCrime</RepositoryUrl>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <DockerRegistry>ghcr.io/aqibgulrez</DockerRegistry>
+    <DefaultDockerTag>latest</DefaultDockerTag>
   </PropertyGroup>
 </Project>

@@ -4,4 +4,15 @@
     <ServiceName>UserService</ServiceName>
     <DockerImageName>truecrime/userservice</DockerImageName>
   </PropertyGroup>
+  <PropertyGroup>
+    <!-- Fallback centralized package versions for builds inside the service folder -->
+    <EFCoreVersion>10.0.0</EFCoreVersion>
+    <EFCoreDesignVersion>10.0.0</EFCoreDesignVersion>
+    <NpgsqlVersion>10.0.0</NpgsqlVersion>
+    <JwtBearerVersion>10.0.0</JwtBearerVersion>
+    <MicrosoftIdentityModelJsonWebTokensVersion>10.0.0</MicrosoftIdentityModelJsonWebTokensVersion>
+    <SystemIdentityModelTokensJwtVersion>10.0.0</SystemIdentityModelTokensJwtVersion>
+    <MicrosoftExtensionsCachingMemoryVersion>10.0.0</MicrosoftExtensionsCachingMemoryVersion>
+    <EFCoreInMemoryVersion>10.0.0</EFCoreInMemoryVersion>
+  </PropertyGroup>
 </Project>

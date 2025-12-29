@@ -51,3 +51,23 @@ docker compose up --build
 ```
 
 If you want, I can add a `docker-compose.yml` and a startup script next.
+
+## Cognito dev pool (quick start)
+
+For parity with production, create a Cognito dev user pool and add the details to `backend/services/UserService/UserService.API/appsettings.Development.json`.
+
+Steps:
+
+1. Create a Cognito User Pool in your dev AWS account. Note `Region`, `UserPoolId`, and create an App Client to get `ClientId`.
+2. Populate `appsettings.Development.json` with the values (example file is already added in the API project).
+3. Start the API locally and obtain tokens from Cognito (AdminCreateUser or using hosted UI). Example run:
+
+```powershell
+# Run API
+dotnet run --project backend\services\UserService\UserService.API\UserService.API.csproj
+
+# Use AWS CLI to get tokens for tests (example - requires setup)
+# aws cognito-idp admin-initiate-auth --user-pool-id <id> --client-id <clientid> --auth-flow ADMIN_NO_SRP_AUTH --auth-parameters USERNAME=<user>,PASSWORD=<pass>
+```
+
+CI/Integration tests should obtain tokens from a dedicated dev pool or mock `IAuthService` for unit tests. Keep secrets (app client secret) in Secrets Manager and supply to CI via environment variables.
