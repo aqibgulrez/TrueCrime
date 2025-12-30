@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qXI+KxBaKQE=",
+  "dgSpecHash": "ie1obh0s7ew=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Application\\UserService.Application.csproj",
+  "projectFilePath": "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Application\\UserService.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aqibs\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
   ],

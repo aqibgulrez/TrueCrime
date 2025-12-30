@@ -31,5 +31,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <WarningLevel>5</WarningLevel>
     <Deterministic>true</Deterministic>
+    <!-- Suppress missing XML comment warnings for now to allow local builds -->
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
 </Project>
