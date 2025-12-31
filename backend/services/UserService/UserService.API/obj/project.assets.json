@@ -714,11 +714,11 @@
   "project": {
     "version": "0.1.0",
     "restore": {
-      "projectUniqueName": "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.API\\UserService.API.csproj",
+      "projectUniqueName": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.API\\UserService.API.csproj",
       "projectName": "UserService.API",
-      "projectPath": "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.API\\UserService.API.csproj",
+      "projectPath": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.API\\UserService.API.csproj",
       "packagesPath": "C:\\Users\\aqibs\\.nuget\\packages\\",
-      "outputPath": "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.API\\obj\\",
+      "outputPath": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -740,8 +740,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Application\\UserService.Application.csproj": {
-              "projectPath": "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Application\\UserService.Application.csproj"
+            "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Application\\UserService.Application.csproj": {
+              "projectPath": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Application\\UserService.Application.csproj"
             },
             "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Infrastructure\\UserService.Infrastructure.csproj": {
               "projectPath": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.Infrastructure\\UserService.Infrastructure.csproj"

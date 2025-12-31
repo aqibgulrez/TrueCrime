@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zfcNcVkXyjE=",
+  "dgSpecHash": "rWEUVOlLc9E=",
   "success": true,
-  "projectFilePath": "d:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.API\\UserService.API.csproj",
+  "projectFilePath": "D:\\Projects\\TrueCrime\\backend\\services\\UserService\\UserService.API\\UserService.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aqibs\\.nuget\\packages\\awssdk.cognitoidentityprovider\\3.7.1.13\\awssdk.cognitoidentityprovider.3.7.1.13.nupkg.sha512",
     "C:\\Users\\aqibs\\.nuget\\packages\\awssdk.core\\3.7.0.44\\awssdk.core.3.7.0.44.nupkg.sha512",
